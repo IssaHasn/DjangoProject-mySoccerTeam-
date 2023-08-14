@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'myTeam.css' %}">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY TEAM</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="box">
+        <h1>MY TEAM</h1>
+        <ul class="playerList">
+            {% for player in Team %}
+            <li><a class="player" href="http://127.0.0.1:8000/player/{{player.id}}">{{player.name}} {{player.lastName}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
